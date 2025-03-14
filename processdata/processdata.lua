@@ -797,7 +797,7 @@ function Process.process_data(data, locales, verbose)
 	local plant_map = {}
 	for name, d in sorted_pairs(data["plant"]) do
 		table.insert(plants, make_plant(locale, d, seed_map))
-		if d.autoplace then
+		if d.autoplace and d.autoplace.control then
 			append(plant_map, d.autoplace.control, name)
 		end
 	end
