@@ -1,0 +1,14 @@
+services:
+  calculator:
+    build: .
+    ports:
+      - 8000:80
+    volumes:
+      - type: bind
+        source: C:\Program Files (x86)\Steam\steamapps\common\Factorio
+        target: /var/game
+        read_only: true
+      - type: bind
+        source: ${APPDATA}\Factorio\mods
+        target: /var/mod
+        read_only: true
