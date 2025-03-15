@@ -24,7 +24,7 @@ var startBrowser = flag.Bool("browser", true, "Whether to automatically launch w
 
 func getOverride(version string) []byte {
 	return []byte(fmt.Sprintf(`"use strict"
-var OVERRIDE = "%s"
+export let OVERRIDE = "%s"
 `, version))
 }
 
